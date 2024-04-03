@@ -1,10 +1,10 @@
-package com.polarbookshop.cnscatalogservice;
+package com.polarbookshop.catalogservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CnsCatalogServiceApplicationTests {
+class CatalogServiceApplicationTests {
 
     @Test
     void contextLoads() {

@@ -1,13 +1,13 @@
-package com.polarbookshop.cnscatalogservice;
+package com.polarbookshop.catalogservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CnsCatalogServiceApplication {
+public class CatalogServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CnsCatalogServiceApplication.class, args);
+        SpringApplication.run(CatalogServiceApplication.class, args);
     }
 
 }

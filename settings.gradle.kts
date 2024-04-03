@@ -1,1 +1,1 @@
-rootProject.name = "cns-catalog-service"
+rootProject.name = "catalog-service"
