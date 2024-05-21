@@ -1,8 +1,9 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 import org.springframework.boot.gradle.tasks.run.BootRun
 
 plugins {
     java
-    id("org.springframework.boot") version "3.2.4"
+    id("org.springframework.boot") version "3.2.5"
     id("io.spring.dependency-management") version "1.1.4"
 }
 
@@ -39,6 +40,19 @@ dependencyManagement {
     imports {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
         mavenBom("org.testcontainers:testcontainers-bom:${property("testcontainersVersion")}")
+    }
+}
+
+tasks.withType<BootBuildImage> {
+    imageName.set(project.name)
+    environment = mapOf("BP_JVM_VERSION" to "21.*")
+
+    docker {
+        publishRegistry {
+            username.set(project.findProperty("registryUsername") as String?)
+            password.set(project.findProperty("registryToken") as String?)
+            url.set(project.findProperty("registryUrl") as String?)
+        }
     }
 }
 
